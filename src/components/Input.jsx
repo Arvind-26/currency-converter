@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import useCurrencyChange from '../hooks/useCurrencyChange';
 
-const InputBox = ({ onAmountChange, onCurrencyChange, convertedAmount }) => {
+const InputBox = ({ onAmountChange, onCurrencyChange, convertedAmount, currencyProp }) => {
     const currencyName = useCurrencyChange();
-    const [currency, setCurrency] = useState("USD");
+    const [currency, setCurrency] = useState(currencyProp);
     const [amount, setAmount] = useState(0);
 
     const handleAmountChange = (e) => {
@@ -26,7 +26,7 @@ const InputBox = ({ onAmountChange, onCurrencyChange, convertedAmount }) => {
             <div>
                 <select
                     value={currency}
-                    className="rounded-full p-2 h-10 bg-[#ffffff42] shadow-md"
+                    className="rounded-full p-2 h-10 bg-[#fff5e1a6] shadow-md"
                     onChange={handleCurrencyChange}
                 >
                     {currencyName.map((item) => (
@@ -39,7 +39,7 @@ const InputBox = ({ onAmountChange, onCurrencyChange, convertedAmount }) => {
             <div>
                 <input
                     onChange={handleAmountChange}
-                    className="rounded-full p-2 h-10 bg-[#ffffff42] text-black shadow-md placeholder-gray-600"
+                    className="rounded-full p-2 h-10 bg-[#fff5e1a6] text-black shadow-md placeholder-gray-600"
                     min={0}
                     type="number"
                     name="amount"

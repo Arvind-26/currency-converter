@@ -6,7 +6,7 @@ function App() {
   const [amountValue, setAmountValue] = useState(0);
   const [convertedAmount, setConvertedAmount] = useState(0);
   const [fromCurrency, setFromCurrency] = useState('USD');
-  const [toCurrency, setToCurrency] = useState('USD');
+  const [toCurrency, setToCurrency] = useState('INR');
 
   const convertCurrency = () => {
     fetch(
@@ -29,21 +29,27 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-[#5E686D]">
-      <div className="flex flex-col items-center justify-center bg-[#A9BFA8] rounded-lg p-5">
-        <InputBox
-          onAmountChange={handleAmountChange}
-          onCurrencyChange={handleFromChange}
-        />
-        <button
-          onClick={convertCurrency}
-          className="px-4 py-2 bg-[#3A3960] text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition"
-        >
-          Convert
-        </button>
-        <InputBox onCurrencyChange={handleToChange} convertedAmount={convertedAmount} />
+    <>
+      <div className="flex flex-col items-center justify-center h-dvh bg-[#FFF5E1]">
+
+        <h1 className='text-4xl font-bold mb-3'>Currency Converter</h1>
+
+        <div className="flex flex-col items-center justify-center bg-[#FF6969] rounded-lg p-5">
+          <InputBox
+            onAmountChange={handleAmountChange}
+            onCurrencyChange={handleFromChange}
+            currencyProp={fromCurrency}
+          />
+          <button
+            onClick={convertCurrency}
+            className="px-4 py-2 bg-[#10215e] text-white font-semibold rounded-lg shadow-md hover:bg-[#081131] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition"
+          >
+            Convert
+          </button>
+          <InputBox onCurrencyChange={handleToChange} convertedAmount={convertedAmount} currencyProp={toCurrency}/>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
