@@ -30,11 +30,11 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-dvh bg-[#FFF5E1]">
+      <div className="flex flex-col items-center justify-center h-dvh bg-[#081c15]">
 
-        <h1 className='text-4xl font-bold mb-3'>Currency Converter</h1>
+        <h1 className='text-4xl font-bold mb-3 text-white'>Currency Converter</h1>
 
-        <div className="flex flex-col items-center justify-center bg-[#FF6969] rounded-lg p-5">
+        <div className="flex flex-col items-center justify-center bg-[#1b4332] rounded-lg p-5">
           <InputBox
             onAmountChange={handleAmountChange}
             onCurrencyChange={handleFromChange}
@@ -42,7 +42,7 @@ function App() {
           />
           <button
             onClick={convertCurrency}
-            className="px-4 py-2 bg-[#10215e] text-white font-semibold rounded-lg shadow-md hover:bg-[#081131] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition"
+            className="px-4 py-2 bg-[#52b788] text-white font-semibold rounded-lg shadow-md hover:bg-[#35815e] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition"
           >
             Convert
           </button>
